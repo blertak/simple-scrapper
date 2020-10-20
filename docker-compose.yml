@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  local_mysql:
+    image: mysql:5.7.31
+    container_name: local_mysql
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: '1234'
+      MYSQL_ROOT_PASSWORD: '1234'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+
