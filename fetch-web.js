@@ -42,6 +42,9 @@ const main = async () => {
     await page.click('.range_inputs .applyBtn')
 
     await page.waitFor(4000)
+    await page.$eval('#launcher', (contactNode) => {
+      contactNode.parentNode.removeChild(contactNode)
+    })
     const elem = await page.$('.pagination li:nth-child(8)')
     await elem.focus()
 
